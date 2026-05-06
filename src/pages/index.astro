@@ -37,26 +37,44 @@ const SIGNUP_URL = SITE_URL;
 					<a href="#pricing">套餐价格</a>
 					<a href="#team">Team 计划</a>
 				</nav>
-				<a href={SIGNUP_URL} class="btn-dark btn-sm">免费注册</a>
+				<a href={SIGNUP_URL} class="btn-dark btn-sm">
+					<svg viewBox="0 0 24 24"
+						><polyline points="20 12 20 22 4 22 4 12"></polyline><rect
+							x="2"
+							y="7"
+							width="20"
+							height="5"></rect><line x1="12" y1="22" x2="12" y2="7"
+						></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"
+						></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"
+						></path></svg
+					>
+					领 $1 体验金
+				</a>
 			</div>
 		</header>
 
 		<!-- ─── Hero ─── -->
 		<section class="hero fade-in visible">
 			<div class="container">
-				<p class="hero-eyebrow">国内直连 · 全球前沿模型 · 即开即用</p>
+				<p class="hero-eyebrow hero-eyebrow-gift">
+					<span class="eyebrow-tag">🎁 限时活动</span>
+					新用户注册即送 <strong>$1 美元 API</strong> 体验金
+				</p>
 				<h1>全球最强 AI 模型<br /><em>一个 API 全搞定</em></h1>
 				<p class="hero-desc">
 					BestModel 聚合 Claude Opus / Sonnet / Haiku 等前沿大模型，国内毫秒级直连，
 					Prompt 缓存原生支持， OpenAI / Anthropic SDK 一行代码迁移。
 				</p>
 				<div class="hero-actions">
-					<a href={SIGNUP_URL} class="btn-primary">
-						立即免费注册
+					<a href={SIGNUP_URL} class="btn-primary btn-lg">
+						立即领取 $1 体验金
 						<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
 					</a>
 					<a href="#pricing" class="btn-outline">查看套餐</a>
 				</div>
+				<p class="hero-finepoint">
+					0 元开通 · 无需充值 · 即时到账，注册即可调用
+				</p>
 				<div class="hero-stats">
 					<div class="stat-item">
 						<span class="stat-value">99.98<span class="stat-pct">%</span></span>
@@ -148,8 +166,8 @@ const SIGNUP_URL = SITE_URL;
 					</div>
 				</div>
 				<div class="pain-cta">
-					<a href={SIGNUP_URL} class="btn-primary">
-						BestModel 一站搞定
+					<a href={SIGNUP_URL} class="btn-primary btn-lg">
+						免费领取 $1 体验金 · 一站搞定
 						<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
 					</a>
 				</div>
@@ -382,10 +400,14 @@ const SIGNUP_URL = SITE_URL;
 		<!-- ─── CTA ─── -->
 		<section class="cta-section fade-in">
 			<div class="container">
-				<h2>5 分钟接入<br />立即体验全球最强模型</h2>
-				<p class="cta-desc">注册即可获取专属 API Key，OpenAI / Anthropic SDK 一行代码迁移。</p>
+				<p class="cta-eyebrow">🎁 限时活动 · 注册即送</p>
+				<h2>立即领取 $1 体验金<br /><em>5 分钟接入全球最强模型</em></h2>
+				<p class="cta-desc">
+					0 元开通，无需充值，即时到账。注册即获专属 API Key，
+					OpenAI / Anthropic SDK 一行代码迁移。
+				</p>
 				<a href={SIGNUP_URL} class="btn-primary btn-lg">
-					立即免费注册
+					免费领取 $1 体验金
 					<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
 				</a>
 				<div class="trust-row">
@@ -394,7 +416,7 @@ const SIGNUP_URL = SITE_URL;
 							><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline
 								points="22 4 12 14.01 9 11.01"></polyline></svg
 						>
-						国内直连
+						注册送 $1 体验金
 					</span>
 					<span class="trust-item">
 						<svg viewBox="0 0 24 24"
@@ -674,6 +696,38 @@ const SIGNUP_URL = SITE_URL;
 				font-size: 13px;
 				font-weight: 500;
 				border: 1px solid var(--accent-line);
+			}
+
+			.hero-eyebrow-gift {
+				padding: 6px 6px 6px 6px;
+				gap: 10px;
+				background: linear-gradient(
+					90deg,
+					rgba(204, 120, 92, 0.14) 0%,
+					rgba(204, 120, 92, 0.06) 100%
+				);
+				font-size: 14px;
+			}
+
+			.hero-eyebrow-gift strong {
+				color: var(--ink);
+				font-weight: 700;
+			}
+
+			.eyebrow-tag {
+				background: var(--accent);
+				color: #fff;
+				padding: 4px 10px;
+				border-radius: 9999px;
+				font-size: 12px;
+				font-weight: 600;
+				white-space: nowrap;
+			}
+
+			.hero-finepoint {
+				font-size: 13px;
+				color: var(--muted-2);
+				margin-top: 4px;
 			}
 
 			.hero h1 {
@@ -1273,6 +1327,17 @@ const SIGNUP_URL = SITE_URL;
 				flex-direction: column;
 				align-items: center;
 				gap: 18px;
+			}
+
+			.cta-eyebrow {
+				display: inline-block;
+				padding: 6px 14px;
+				border-radius: 9999px;
+				background: var(--accent-soft);
+				color: var(--accent);
+				font-size: 13px;
+				font-weight: 600;
+				border: 1px solid var(--accent-line);
 			}
 
 			.cta-section h2 {
