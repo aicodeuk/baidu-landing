@@ -1,50 +1,1202 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../consts";
+
+const SIGNUP_URL = SITE_URL;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN" data-theme="dark">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{SITE_TITLE}</title>
+		<meta name="description" content={SITE_DESCRIPTION} />
+		<meta
+			name="keywords"
+			content="BestModel, Claude API, Claude 国内直连, OpenAI 兼容 API, 大模型 API, 团队 AI 套餐, Anthropic SDK, 1M 长上下文"
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={SITE_TITLE} />
+		<meta property="og:description" content={SITE_DESCRIPTION} />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>"
+		/>
 	</head>
 	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
+		<!-- ─── Hero ─── -->
+		<section class="hero fade-in visible">
+			<div class="hero-glow"></div>
+			<div class="container">
+				<p class="hero-badge">国内直连 · 人民币计价 · 即开即用</p>
+				<h1>全球最强 AI 模型<br />一个 API 全搞定</h1>
+				<p class="hero-desc">
+					BestModel 聚合 Claude Opus / Sonnet / Haiku 等前沿大模型，国内毫秒级直连，包月套餐
+					<strong>¥1 = $1 美元 API 用量</strong>，OpenAI / Anthropic SDK 零改动迁移。
+				</p>
+				<a href={SIGNUP_URL} class="btn-primary">
+					立即免费注册
+					<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+				</a>
+				<div class="stats">
+					<div class="stat-item">
+						<span class="stat-value">99.98%</span>
+						<span class="stat-label">服务可用率</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-value">¥1 = $1</span>
+						<span class="stat-label">包月计价</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-value">1M</span>
+						<span class="stat-label">超长上下文</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-value">150</span>
+						<span class="stat-label">团队成员上限</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ─── Features ─── -->
+		<section class="section fade-in">
+			<div class="container">
+				<div class="section-header">
+					<p class="section-subtitle">为什么选择 BestModel</p>
+					<h2 class="section-title">六大<span class="hl">核心优势</span></h2>
+				</div>
+				<div class="feat-grid">
+					<div class="feat-card">
+						<div class="feat-icon">
+							<svg viewBox="0 0 24 24"
+								><circle cx="12" cy="12" r="10"></circle><path
+									d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+								></path></svg
+							>
+						</div>
+						<h3>国内加速直连</h3>
+						<p>专属中国线路，无需翻墙、无需代理，平均延迟低于 380ms，稳定不断流。</p>
+					</div>
+					<div class="feat-card">
+						<div class="feat-icon">
+							<svg viewBox="0 0 24 24"
+								><line x1="12" y1="1" x2="12" y2="23"></line><path
+									d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+								></path></svg
+							>
+						</div>
+						<h3>¥1 = $1 美元 API</h3>
+						<p>包月套餐人民币 1:1 等价美元 API 用量，无汇率溢价，比官方价格更划算。</p>
+					</div>
+					<div class="feat-card">
+						<div class="feat-icon">
+							<svg viewBox="0 0 24 24"
+								><polyline points="16 18 22 12 16 6"></polyline><polyline
+									points="8 6 2 12 8 18"></polyline></svg
+							>
+						</div>
+						<h3>OpenAI / Anthropic 双兼容</h3>
+						<p>兼容主流 SDK，仅替换 base_url 和 API Key，现有代码零改动即可上线。</p>
+					</div>
+					<div class="feat-card">
+						<div class="feat-icon">
+							<svg viewBox="0 0 24 24"
+								><path
+									d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+								></path><polyline points="14 2 14 8 20 8"></polyline></svg
+							>
+						</div>
+						<h3>1M 超长上下文</h3>
+						<p>单次请求最高百万 Token，整本书、整个代码库一次喂入，深度阅读与理解。</p>
+					</div>
+					<div class="feat-card">
+						<div class="feat-icon">
+							<svg viewBox="0 0 24 24"
+								><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg
+							>
+						</div>
+						<h3>Prompt 缓存省钱</h3>
+						<p>原生支持 Prompt Caching，重复上下文复用最高节省 90% Token 成本与延迟。</p>
+					</div>
+					<div class="feat-card">
+						<div class="feat-icon">
+							<svg viewBox="0 0 24 24"
+								><path
+									d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+								></path><circle cx="9" cy="7" r="4"></circle><path
+									d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path
+									d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg
+							>
+						</div>
+						<h3>团队 Team 计划</h3>
+						<p>一名管理员可邀请最多 150 名成员，统一付费、集中管控，每人独立配额互不干扰。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ─── Pricing ─── -->
+		<section id="pricing" class="section fade-in">
+			<div class="container">
+				<div class="section-header">
+					<p class="section-subtitle">透明定价</p>
+					<h2 class="section-title">三档<span class="hl">包月套餐</span></h2>
+				</div>
+				<p class="section-desc">人民币 1:1 等价美元 API 用量 · 5 小时 / 7 天双窗口配额 · 全模型可用</p>
+				<div class="price-cards">
+					<!-- Pro -->
+					<div class="price-card">
+						<div class="price-header">
+							<span class="price-name">Pro</span>
+							<span class="price-type">个人开发者</span>
+						</div>
+						<div class="price-amount">
+							<span class="price-currency">¥</span><span class="price-num">20</span><span
+								class="price-unit">/ 月</span
+							>
+						</div>
+						<div class="price-equiv">≈ $20 美元 API 用量</div>
+						<ul class="price-feat">
+							<li>5 小时窗口 $10 用量</li>
+							<li>7 天滚动窗口 $66 用量</li>
+							<li>全模型访问 · 1M 上下文</li>
+							<li>更高并发与开发者工具</li>
+							<li>24h 邮件支持</li>
+						</ul>
+						<a href={SIGNUP_URL} class="btn-primary btn-block">开通 Pro</a>
+					</div>
+
+					<!-- Max 100 (推荐) -->
+					<div class="price-card price-card-featured">
+						<div class="featured-badge">最受欢迎</div>
+						<div class="price-header">
+							<span class="price-name">Max 100</span>
+							<span class="price-type">重度使用</span>
+						</div>
+						<div class="price-amount">
+							<span class="price-currency">¥</span><span class="price-num">100</span><span
+								class="price-unit">/ 月</span
+							>
+						</div>
+						<div class="price-equiv">≈ $100 美元 API 用量 · 相当于 5× Pro</div>
+						<ul class="price-feat">
+							<li>5 小时窗口 $50 用量</li>
+							<li>7 天滚动窗口 $333 用量</li>
+							<li>高峰时段优先调度</li>
+							<li>新功能 / 新模型抢先体验</li>
+							<li>专属客户经理</li>
+						</ul>
+						<a href={SIGNUP_URL} class="btn-primary btn-block">开通 Max 100</a>
+					</div>
+
+					<!-- Max 200 -->
+					<div class="price-card">
+						<div class="price-header">
+							<span class="price-name">Max 200</span>
+							<span class="price-type">企业级</span>
+						</div>
+						<div class="price-amount">
+							<span class="price-currency">¥</span><span class="price-num">200</span><span
+								class="price-unit">/ 月</span
+							>
+						</div>
+						<div class="price-equiv">≈ $200 美元 API 用量 · 相当于 20× Pro</div>
+						<ul class="price-feat">
+							<li>5 小时窗口 $100 用量</li>
+							<li>7 天滚动窗口 $666 用量</li>
+							<li>最高优先级 · 峰值保障</li>
+							<li>专属接入指导</li>
+							<li>12h 优先工单响应</li>
+						</ul>
+						<a href={SIGNUP_URL} class="btn-primary btn-block">开通 Max 200</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ─── Team Plan ─── -->
+		<section id="team" class="section section-team fade-in">
+			<div class="container">
+				<div class="team-card">
+					<div class="team-content">
+						<p class="section-subtitle">企业 Team 计划</p>
+						<h2 class="team-title">一个账户，统一管理整支 AI 团队</h2>
+						<p class="team-desc">
+							管理员一键邀请最多 <strong>150 名成员</strong>，统一付费、集中开票、独立配额。
+							团队成员开箱即用，免去每人单独充值的烦恼。
+						</p>
+						<ul class="team-feat">
+							<li>
+								<svg viewBox="0 0 24 24"
+									><polyline points="20 6 9 17 4 12"></polyline></svg
+								>
+								1 名 Owner + 最多 150 名成员
+							</li>
+							<li>
+								<svg viewBox="0 0 24 24"
+									><polyline points="20 6 9 17 4 12"></polyline></svg
+								>
+								Stripe / 支付宝 / 微信 统一付款
+							</li>
+							<li>
+								<svg viewBox="0 0 24 24"
+									><polyline points="20 6 9 17 4 12"></polyline></svg
+								>
+								每位成员独立 5h / 7d 配额，互不影响
+							</li>
+							<li>
+								<svg viewBox="0 0 24 24"
+									><polyline points="20 6 9 17 4 12"></polyline></svg
+								>
+								实时用量看板 · 集中开票 · 一键退订
+							</li>
+						</ul>
+						<a href={SIGNUP_URL} class="btn-primary">
+							申请 Team 计划
+							<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+						</a>
+					</div>
+					<div class="team-visual" aria-hidden="true">
+						<div class="team-orb">
+							<div class="team-owner">
+								<svg viewBox="0 0 24 24"
+									><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+									></path><circle cx="12" cy="7" r="4"></circle></svg
+								>
+								<span>Owner</span>
+							</div>
+							<div class="team-members">
+								<span class="member-dot">+150 Members</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ─── CTA ─── -->
+		<section class="cta-section fade-in">
+			<div class="container">
+				<h2>5 分钟接入，立即体验全球最强模型</h2>
+				<p class="cta-desc">注册即可获取专属 API Key，OpenAI / Anthropic SDK 一行代码迁移。</p>
+				<a href={SIGNUP_URL} class="btn-primary">
+					立即免费注册
+					<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+				</a>
+				<div class="trust-row">
+					<span class="trust-item">
+						<svg viewBox="0 0 24 24"
+							><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline
+								points="22 4 12 14.01 9 11.01"></polyline></svg
+						>
+						国内直连
+					</span>
+					<span class="trust-item">
+						<svg viewBox="0 0 24 24"
+							><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline
+								points="22 4 12 14.01 9 11.01"></polyline></svg
+						>
+						人民币计价 · 等价美元
+					</span>
+					<span class="trust-item">
+						<svg viewBox="0 0 24 24"
+							><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline
+								points="22 4 12 14.01 9 11.01"></polyline></svg
+						>
+						OpenAI / Anthropic 兼容
+					</span>
+					<span class="trust-item">
+						<svg viewBox="0 0 24 24"
+							><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline
+								points="22 4 12 14.01 9 11.01"></polyline></svg
+						>
+						支持开票
+					</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- ─── Footer ─── -->
+		<footer class="footer">
+			<div class="container footer-inner">
+				<p>© 2026 BestModel · bestmodel.dev</p>
+				<p class="footer-links">
+					<a href={SIGNUP_URL}>注册</a>
+					<span>·</span>
+					<a href="#pricing">套餐</a>
+					<span>·</span>
+					<a href="#team">Team 计划</a>
+				</p>
+			</div>
+		</footer>
+
+		<script>
+			const obs = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((e) => {
+						if (e.isIntersecting) {
+							e.target.classList.add("visible");
+							obs.unobserve(e.target);
+						}
+					});
+				},
+				{ threshold: 0.15 },
+			);
+			document.querySelectorAll(".fade-in").forEach((el) => obs.observe(el));
+		</script>
+
+		<style is:global>
+			*,
+			*::before,
+			*::after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			:root {
+				--bg: #130c05;
+				--fg: #fff;
+				--fg-muted: rgba(245, 240, 232, 0.6);
+				--fg-subtle: rgba(255, 255, 255, 0.7);
+				--color-primary: #d4841a;
+				--color-glow: #bd6d1d;
+				--color-mid: #e6984a;
+				--color-pale: #f5d4a8;
+				--font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+					"Microsoft YaHei", sans-serif;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: var(--font-sans);
+				background: var(--bg);
+				color: var(--fg);
+				line-height: 1.6;
+				-webkit-font-smoothing: antialiased;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			.container {
+				max-width: 1300px;
+				width: 100%;
+				margin: 0 auto;
+				padding: 0 48px;
+			}
+
+			/* ═══ 按钮 ═══ */
+			.btn-primary {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				gap: 8px;
+				border-radius: 9999px;
+				padding: 14px 36px;
+				font-size: 16px;
+				font-weight: 600;
+				color: #1a0a00;
+				background: linear-gradient(122deg, #f3bc85 -57%, #ac651e 106%);
+				border: none;
+				cursor: pointer;
+				white-space: nowrap;
+				transition:
+					filter 0.2s,
+					transform 0.2s;
+				box-shadow:
+					0 13px 23px -4px rgba(15, 19, 32, 0.3),
+					inset 0 0 2px rgba(255, 255, 255, 0.9),
+					inset 0 0 15px rgba(255, 241, 228, 0.4);
+			}
+
+			.btn-primary:hover {
+				filter: brightness(1.1);
+				transform: translateY(-1px);
+			}
+
+			.btn-primary svg {
+				width: 16px;
+				height: 16px;
+				stroke: currentColor;
+				fill: none;
+				stroke-width: 2;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			.btn-block {
+				width: 100%;
+				margin-top: auto;
+			}
+
+			/* ═══ Hero ═══ */
+			.hero {
+				position: relative;
+				overflow: hidden;
+				padding: 120px 0 100px;
+				text-align: center;
+			}
+
+			.hero-glow {
+				position: absolute;
+				top: -80px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 600px;
+				height: 350px;
+				background: var(--color-glow);
+				filter: blur(200px);
+				opacity: 0.35;
+				pointer-events: none;
+			}
+
+			.hero .container {
+				position: relative;
+				z-index: 1;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 24px;
+			}
+
+			.hero-badge {
+				font-size: 14px;
+				color: var(--color-primary);
+				font-weight: 600;
+				letter-spacing: 2px;
+			}
+
+			.hero h1 {
+				font-size: 52px;
+				font-weight: 800;
+				line-height: 1.2;
+				background: linear-gradient(180deg, #fff 0%, #f5d4a8 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.hero-desc {
+				font-size: 17px;
+				color: var(--fg-subtle);
+				max-width: 640px;
+			}
+
+			.hero-desc strong {
+				color: var(--color-primary);
+			}
+
+			.hero .btn-primary {
+				margin-top: 8px;
+			}
+
+			.stats {
+				display: flex;
+				gap: 56px;
+				margin-top: 24px;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			.stat-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 4px;
+			}
+
+			.stat-value {
+				font-size: 28px;
+				font-weight: 700;
+				color: var(--color-primary);
+			}
+
+			.stat-label {
+				font-size: 13px;
+				color: var(--fg-muted);
+			}
+
+			/* ═══ Section 通用 ═══ */
+			.section {
+				padding: 100px 0;
+			}
+
+			.section-header {
+				text-align: center;
+				margin-bottom: 56px;
+			}
+
+			.section-subtitle {
+				font-size: 14px;
+				color: var(--color-primary);
+				font-weight: 600;
+				letter-spacing: 2px;
+				margin-bottom: 12px;
+			}
+
+			.section-title {
+				font-size: 40px;
+				font-weight: 700;
+			}
+
+			.section-title .hl {
+				background: linear-gradient(
+					90deg,
+					var(--color-mid) -61%,
+					var(--color-pale) 23%,
+					var(--color-mid) 129%
+				);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.section-desc {
+				font-size: 16px;
+				color: var(--fg-subtle);
+				text-align: center;
+				margin-bottom: 48px;
+			}
+
+			/* ═══ Features ═══ */
+			.feat-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 24px;
+			}
+
+			.feat-card {
+				padding: 32px 24px;
+				border-radius: 16px;
+				background: linear-gradient(
+					180deg,
+					rgba(212, 132, 26, 0.08) 0%,
+					rgba(212, 132, 26, 0.02) 100%
+				);
+				border: 1px solid rgba(212, 132, 26, 0.15);
+				transition: transform 0.3s;
+			}
+
+			.feat-card:hover {
+				transform: translateY(-4px);
+			}
+
+			.feat-icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 48px;
+				height: 48px;
+				border-radius: 12px;
+				background: rgba(212, 132, 26, 0.15);
+				color: var(--color-primary);
+				margin-bottom: 20px;
+			}
+
+			.feat-icon svg {
+				width: 24px;
+				height: 24px;
+				stroke: currentColor;
+				fill: none;
+				stroke-width: 2;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			.feat-card h3 {
+				font-size: 18px;
+				font-weight: 600;
+				margin-bottom: 8px;
+			}
+
+			.feat-card p {
+				font-size: 14px;
+				line-height: 1.6;
+				color: var(--fg-muted);
+			}
+
+			/* ═══ Pricing ═══ */
+			.price-cards {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 24px;
+			}
+
+			.price-card {
+				padding: 36px 28px;
+				border-radius: 20px;
+				display: flex;
+				flex-direction: column;
+				gap: 16px;
+				position: relative;
+				background:
+					linear-gradient(
+						180deg,
+						rgba(230, 152, 74, 0.18) 0%,
+						rgba(230, 152, 74, 0.05) 93%
+					),
+					rgba(19, 12, 5, 0.7);
+				backdrop-filter: blur(20px) saturate(120%);
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				box-shadow: inset 0 4px 22px rgba(255, 208, 161, 0.08);
+			}
+
+			.price-card-featured {
+				background:
+					linear-gradient(
+						180deg,
+						rgba(230, 152, 74, 0.35) 0%,
+						rgba(230, 152, 74, 0.12) 93%
+					),
+					rgba(19, 12, 5, 0.7);
+				border-color: rgba(230, 152, 74, 0.5);
+				box-shadow:
+					0 0 0 1px rgba(230, 152, 74, 0.3),
+					inset 0 4px 22px rgba(255, 208, 161, 0.18),
+					0 24px 48px -12px rgba(212, 132, 26, 0.35);
+				transform: translateY(-8px);
+			}
+
+			.featured-badge {
+				position: absolute;
+				top: -14px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: linear-gradient(122deg, #f3bc85 -57%, #ac651e 106%);
+				color: #1a0a00;
+				padding: 6px 16px;
+				border-radius: 9999px;
+				font-size: 12px;
+				font-weight: 700;
+				letter-spacing: 1px;
+				box-shadow: 0 4px 12px rgba(172, 101, 30, 0.5);
+			}
+
+			.price-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.price-name {
+				font-size: 22px;
+				font-weight: 700;
+			}
+
+			.price-type {
+				font-size: 12px;
+				padding: 4px 12px;
+				border-radius: 9999px;
+				background: rgba(212, 132, 26, 0.15);
+				color: var(--color-primary);
+				font-weight: 600;
+			}
+
+			.price-amount {
+				display: flex;
+				align-items: baseline;
+				gap: 4px;
+				padding: 8px 0 0;
+			}
+
+			.price-currency {
+				font-size: 24px;
+				font-weight: 700;
+				color: var(--color-pale);
+			}
+
+			.price-num {
+				font-size: 56px;
+				font-weight: 800;
+				color: var(--color-pale);
+				line-height: 1;
+			}
+
+			.price-unit {
+				font-size: 16px;
+				color: var(--fg-muted);
+				margin-left: 4px;
+			}
+
+			.price-equiv {
+				font-size: 13px;
+				color: var(--color-primary);
+				font-weight: 500;
+				padding-bottom: 12px;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			}
+
+			.price-feat {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				font-size: 14px;
+				color: var(--fg-subtle);
+				margin-bottom: 16px;
+			}
+
+			.price-feat li {
+				position: relative;
+				padding-left: 22px;
+			}
+
+			.price-feat li::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 6px;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				background: rgba(212, 132, 26, 0.2);
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4841a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+				background-size: 10px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			/* ═══ Team Plan ═══ */
+			.section-team {
+				padding-top: 0;
+			}
+
+			.team-card {
+				background:
+					linear-gradient(
+						135deg,
+						rgba(212, 132, 26, 0.18) 0%,
+						rgba(189, 109, 29, 0.05) 60%,
+						rgba(19, 12, 5, 0.4) 100%
+					);
+				border: 1px solid rgba(230, 152, 74, 0.25);
+				border-radius: 28px;
+				padding: 56px;
+				display: grid;
+				grid-template-columns: 1.4fr 1fr;
+				gap: 48px;
+				align-items: center;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.team-card::before {
+				content: "";
+				position: absolute;
+				width: 500px;
+				height: 500px;
+				background: radial-gradient(
+					circle,
+					rgba(212, 132, 26, 0.25) 0%,
+					transparent 70%
+				);
+				top: -200px;
+				right: -150px;
+				pointer-events: none;
+			}
+
+			.team-content {
+				position: relative;
+				z-index: 1;
+			}
+
+			.team-title {
+				font-size: 34px;
+				font-weight: 700;
+				margin: 12px 0 16px;
+				line-height: 1.25;
+			}
+
+			.team-desc {
+				font-size: 16px;
+				color: var(--fg-subtle);
+				margin-bottom: 24px;
+			}
+
+			.team-desc strong {
+				color: var(--color-primary);
+			}
+
+			.team-feat {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+				margin-bottom: 32px;
+			}
+
+			.team-feat li {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				font-size: 15px;
+				color: var(--fg-subtle);
+			}
+
+			.team-feat li svg {
+				width: 18px;
+				height: 18px;
+				flex-shrink: 0;
+				stroke: var(--color-primary);
+				fill: none;
+				stroke-width: 3;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			.team-visual {
+				position: relative;
+				z-index: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 280px;
+			}
+
+			.team-orb {
+				position: relative;
+				width: 280px;
+				height: 280px;
+			}
+
+			.team-owner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 110px;
+				height: 110px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, #f3bc85 0%, #ac651e 100%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 4px;
+				color: #1a0a00;
+				font-weight: 700;
+				font-size: 13px;
+				box-shadow:
+					0 12px 32px rgba(172, 101, 30, 0.5),
+					inset 0 0 16px rgba(255, 241, 228, 0.4);
+				z-index: 2;
+			}
+
+			.team-owner svg {
+				width: 32px;
+				height: 32px;
+				stroke: #1a0a00;
+				fill: none;
+				stroke-width: 2;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			.team-members {
+				position: absolute;
+				inset: 0;
+				border: 1px dashed rgba(230, 152, 74, 0.5);
+				border-radius: 50%;
+				animation: spin 24s linear infinite;
+			}
+
+			.team-members::before,
+			.team-members::after {
+				content: "";
+				position: absolute;
+				inset: 24px;
+				border: 1px dashed rgba(230, 152, 74, 0.3);
+				border-radius: 50%;
+			}
+
+			.team-members::after {
+				inset: 56px;
+			}
+
+			.member-dot {
+				position: absolute;
+				top: -16px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: rgba(19, 12, 5, 0.95);
+				border: 1px solid rgba(230, 152, 74, 0.5);
+				color: var(--color-primary);
+				font-size: 12px;
+				font-weight: 700;
+				padding: 6px 14px;
+				border-radius: 9999px;
+				white-space: nowrap;
+			}
+
+			@keyframes spin {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			/* ═══ CTA ═══ */
+			.cta-section {
+				padding: 100px 0;
+				text-align: center;
+			}
+
+			.cta-section .container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+			}
+
+			.cta-section h2 {
+				font-size: 40px;
+				font-weight: 700;
+				max-width: 720px;
+				background: linear-gradient(180deg, #fff 0%, #f5d4a8 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.cta-section .cta-desc {
+				font-size: 16px;
+				color: var(--fg-subtle);
+				max-width: 520px;
+			}
+
+			.trust-row {
+				display: flex;
+				gap: 32px;
+				margin-top: 16px;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			.trust-item {
+				display: flex;
+				align-items: center;
+				gap: 6px;
+				font-size: 14px;
+				color: var(--fg-muted);
+			}
+
+			.trust-item svg {
+				width: 16px;
+				height: 16px;
+				stroke: var(--color-primary);
+				fill: none;
+				stroke-width: 2;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			/* ═══ Footer ═══ */
+			.footer {
+				margin-top: auto;
+				padding: 32px 0;
+				border-top: 1px solid rgba(255, 255, 255, 0.06);
+			}
+
+			.footer-inner {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 12px;
+			}
+
+			.footer p {
+				font-size: 13px;
+				color: var(--fg-muted);
+			}
+
+			.footer-links {
+				display: flex;
+				gap: 12px;
+			}
+
+			.footer-links a:hover {
+				color: var(--color-primary);
+			}
+
+			/* ═══ Fade-in 动画 ═══ */
+			.fade-in {
+				opacity: 0;
+				transform: translateY(24px);
+				transition:
+					opacity 0.6s ease,
+					transform 0.6s ease;
+			}
+
+			.fade-in.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			/* ═══ 响应式 — 平板 ═══ */
+			@media (max-width: 1024px) {
+				.feat-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.team-card {
+					grid-template-columns: 1fr;
+					padding: 40px;
+				}
+
+				.team-visual {
+					min-height: 240px;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.container {
+					padding: 0 20px;
+				}
+
+				.hero {
+					padding: 80px 0 60px;
+				}
+
+				.hero h1 {
+					font-size: 36px;
+				}
+
+				.stats {
+					gap: 32px;
+				}
+
+				.stat-value {
+					font-size: 24px;
+				}
+
+				.section {
+					padding: 70px 0;
+				}
+
+				.section-title {
+					font-size: 32px;
+				}
+
+				.feat-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.price-cards {
+					grid-template-columns: 1fr;
+					max-width: 480px;
+					margin: 0 auto;
+				}
+
+				.price-card-featured {
+					transform: none;
+				}
+
+				.team-card {
+					padding: 32px 24px;
+				}
+
+				.team-title {
+					font-size: 26px;
+				}
+
+				.cta-section h2 {
+					font-size: 30px;
+				}
+
+				.footer-inner {
+					justify-content: center;
+					text-align: center;
+				}
+			}
+
+			/* ═══ 响应式 — 手机 ═══ */
+			@media (max-width: 480px) {
+				.hero {
+					padding: 60px 0 40px;
+				}
+
+				.hero h1 {
+					font-size: 30px;
+				}
+
+				.hero-desc {
+					font-size: 15px;
+				}
+
+				.stats {
+					gap: 20px;
+				}
+
+				.stat-value {
+					font-size: 20px;
+				}
+
+				.stat-label {
+					font-size: 12px;
+				}
+
+				.btn-primary {
+					font-size: 14px;
+					padding: 12px 28px;
+				}
+
+				.section {
+					padding: 50px 0;
+				}
+
+				.section-header {
+					margin-bottom: 32px;
+				}
+
+				.section-title {
+					font-size: 26px;
+				}
+
+				.feat-card {
+					padding: 24px 20px;
+				}
+
+				.price-card {
+					padding: 28px 22px;
+				}
+
+				.price-num {
+					font-size: 44px;
+				}
+
+				.team-orb {
+					width: 220px;
+					height: 220px;
+				}
+
+				.team-owner {
+					width: 90px;
+					height: 90px;
+				}
+
+				.cta-section h2 {
+					font-size: 24px;
+				}
+
+				.trust-row {
+					gap: 16px;
+				}
+			}
+		</style>
 	</body>
 </html>
